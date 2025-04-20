@@ -26,14 +26,14 @@
   }
   
   .token-name {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
     margin: 0 0 4px 0;
     color: #fff;
   }
   
   .token-metrics {
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     color: #aaa;
     margin: 0;
   }
@@ -48,15 +48,15 @@
   }
   
   .market-cap-label {
-    font-size: 0.8rem;
+    font-size: var(--font-size-xs);
     color: #888;
     margin-bottom: 4px;
   }
   
   .market-cap-value {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
     color: #fff;
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
   }
 
 /* Добавьте эти стили в TokenCard.css */
@@ -93,7 +93,7 @@
 }
 
 .time-period {
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
   color: #888;
   margin-bottom: 4px;
 }
@@ -101,22 +101,23 @@
 /* Стили для положительных/отрицательных изменений */
 .positive-change {
   color: #4caf50; /* Зеленый цвет для положительного изменения */
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 }
 
 .negative-change {
   color: #f44336; /* Красный цвет для отрицательного изменения */
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 }
 
 .no-data {
   color: #888;
   font-style: italic;
+  font-size: var(--font-size-sm);
 }
 
 .loading-details {
   color: #888;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   font-style: italic;
   text-align: center;
   padding: 10px 0;
@@ -134,7 +135,7 @@
   flex: 1;
   padding: 8px 12px;
   border: none;
-    font-size: 0.8rem;
+  font-size: var(--font-size-sm);
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -177,7 +178,7 @@
   justify-content: center;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
-  font-size: 18px;
+  font-size: var(--font-size-lg);
   background-color: #333;
   color: #fff;
   padding: 0;

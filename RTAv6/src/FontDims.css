@@ -1,13 +1,36 @@
 :root {
-    /* Базовые размеры шрифтов */
-    --font-size-xs: 0.75rem;    /* 12px при базовом размере 16px */
-    --font-size-sm: 0.875rem;   /* 14px */
-    --font-size-md: 1rem;       /* 16px - стандартный */
-    --font-size-lg: 1.125rem;   /* 18px */
-    --font-size-xl: 1.25rem;    /* 20px */
-    --font-size-2xl: 1.5rem;    /* 24px */
-    --font-size-3xl: 1.875rem;  /* 30px */
-    --font-size-4xl: 2.25rem;   /* 36px */
+    /* Font family */
+    --font-family-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    
+    /* Font weights */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Line heights */
+    --line-height-tight: 1.1;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    /* Font sizes using clamp() for responsive typography */
+    --font-size-xs: clamp(0.75rem, 1vw, 0.875rem);     /* 12px - 14px */
+    --font-size-sm: clamp(0.875rem, 1vw, 1rem);       /* 14px - 16px */
+    --font-size-md: clamp(0.9rem, 1.4vw, 1.125rem);         /* 16px - 18px */
+    --font-size-lg: clamp(1.125rem, 1.6vw, 1.25rem);      /* 18px - 20px */
+    --font-size-xl: clamp(1.25rem, 11.8vw, 1.5rem);     /* 20px - 24px */
+    --font-size-2xl: clamp(1.5rem, 2.2vw, 1.875rem);        /* 24px - 30px */
+    --font-size-3xl: clamp(1.875rem, 2.8vw, 2.5rem);    /* 30px - 40px */
+    --font-size-4xl: clamp(2.5rem, 4vw, 3.5rem);          /* 40px - 56px */
+    
+    /* Специфические размеры для элементов UI */
+    --font-size-nav: clamp(1rem, 3vw, 1.5rem);                     /* Размер шрифта для навигации */
+    
+    /* Letter spacing */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
     
     /* Относительные размеры (можно использовать при необходимости) */
     --font-size-small: var(--font-size-sm);
@@ -15,57 +38,41 @@
     --font-size-large: var(--font-size-lg);
     --font-size-heading: var(--font-size-xl);
     --font-size-title: var(--font-size-2xl);
-    
-    /* Высота строки (line-height) */
-    --line-height-tight: 1.1;
-    --line-height-normal: 1.5;
-    --line-height-loose: 1.8;
-    
-    /* Толщина шрифта (font-weight) */
-    --font-weight-light: 300;
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    
-    /* Семейства шрифтов */
-    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --font-family-heading: var(--font-family-base);
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  }
-  
-  /* Адаптивные размеры шрифтов для мобильных устройств */
-  @media (max-width: 768px) {
+}
+
+/* Адаптивные размеры шрифтов для мобильных устройств */
+@media (max-width: 768px) {
     :root {
-      --font-size-2xl: 1.25rem;  /* Уменьшаем размеры на мобильных */
-      --font-size-3xl: 1.5rem;
-      --font-size-4xl: 1.75rem;
+        --font-size-2xl: 1.25rem;  /* Уменьшаем размеры на мобильных */
+        --font-size-3xl: 1.5rem;
+        --font-size-4xl: 1.75rem;
     }
-  }
-  
-  /* Классы для применения размеров шрифтов */
-  .text-xs { font-size: var(--font-size-xs); }
-  .text-sm { font-size: var(--font-size-sm); }
-  .text-md { font-size: var(--font-size-md); }
-  .text-lg { font-size: var(--font-size-lg); }
-  .text-xl { font-size: var(--font-size-xl); }
-  .text-2xl { font-size: var(--font-size-2xl); }
-  .text-3xl { font-size: var(--font-size-3xl); }
-  .text-4xl { font-size: var(--font-size-4xl); }
-  
-  /* Классы для применения жирности шрифта */
-  .font-light { font-weight: var(--font-weight-light); }
-  .font-normal { font-weight: var(--font-weight-normal); }
-  .font-medium { font-weight: var(--font-weight-medium); }
-  .font-semibold { font-weight: var(--font-weight-semibold); }
-  .font-bold { font-weight: var(--font-weight-bold); }
-  
-  /* Классы для высоты строки */
-  .leading-tight { line-height: var(--line-height-tight); }
-  .leading-normal { line-height: var(--line-height-normal); }
-  .leading-loose { line-height: var(--line-height-loose); }
-  
-  /* Классы для семейств шрифтов */
-  .font-base { font-family: var(--font-family-base); }
-  .font-heading { font-family: var(--font-family-heading); }
-  .font-mono { font-family: var(--font-family-monospace); }
+}
+
+/* Классы для применения размеров шрифтов */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-md { font-size: var(--font-size-md); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+.text-nav { font-size: var(--font-size-nav); }
+
+/* Классы для применения жирности шрифта */
+.font-light { font-weight: var(--font-weight-light); }
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+/* Классы для высоты строки */
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-loose { line-height: var(--line-height-relaxed); }
+
+/* Классы для семейств шрифтов */
+.font-base { font-family: var(--font-family-base); }
+.font-heading { font-family: var(--font-family-base); }
+.font-mono { font-family: var(--font-family-base); }

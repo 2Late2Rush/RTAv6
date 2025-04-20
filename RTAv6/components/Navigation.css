@@ -44,12 +44,13 @@ nav {
     padding-top: 1rem;
     text-decoration: none;
     color: inherit;
-    font-size: clamp(1rem, 3vw, 1.5rem);
-
+    font-size: var(--font-size-nav, clamp(1rem, 3vw, 1.5rem));
+    font-weight: var(--font-weight-medium);
   }
 
   nav a.active-link {
     color: red; /* Красный цвет текста для активной ссылки */
+    font-weight: var(--font-weight-semibold);
   }
   
   .nav-button .active-link {
