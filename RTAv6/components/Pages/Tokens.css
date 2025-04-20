@@ -1,23 +1,202 @@
 /* components/Pages/Tokens.css */
 .tokens-container {
     padding: 1vw;
-    padding-top: 1vw; /* Добавляем отступ для навигационной панели */
+    padding-top: 10px; /* Отступ для навигационной панели */
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
   }
   
+  /* Поисковая строка */
+  .search-bar {
+    margin-bottom: 15px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .search-bar form {
+    display: flex;
+    width: 100%;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #333;
+   
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: var(--font-size-md);
+    box-sizing: border-box;
+  }
+  
+  .search-button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+   
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    transition: background-color 0.2s;
+  }
+  
+  .search-button:hover {
+    background-color: #444;
+  }
+  
+  .clear-button {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  
+  .clear-button:hover {
+    color: #aaa;
+  }
+  
+  /* Панель сортировки */
+  .sort-panel {
+    margin-bottom: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 8px;
+  }
+  
+  .sort-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .sort-button {
+    padding: 8px 12px;
+    background-color: #222;
+    border: 1px solid #333;
+    
+    color: #aaa;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  
+  .sort-button:hover {
+    background-color: #2a2a2a;
+  }
+  
+  .sort-button.active {
+    background-color: #333;
+    color: #fff;
+    border-color: #444;
+  }
+  
+  /* Фильтр популярности */
+  .popularity-filter {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .popularity-button {
+    padding: 8px 15px;
+    background-color: #222;
+    border: 1px solid #333;
+    
+    color: #fff;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .popularity-button:hover {
+    background-color: #2a2a2a;
+  }
+  
+  .popularity-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background-color: #222;
+    border: 1px solid #333;
+   
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 8px 0;
+    margin-top: 5px;
+  }
+  
+  .popularity-menu button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 15px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .popularity-menu button:hover {
+    background-color: #333;
+  }
+  
+  .custom-popularity {
+    padding: 8px 15px;
+    display: flex;
+    border-top: 1px solid #333;
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+  
+  .custom-popularity input {
+    flex: 1;
+    padding: 6px 8px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+   
+    color: #fff;
+    font-size: var(--font-size-sm);
+    margin-right: 5px;
+  }
+  
+  .custom-popularity button {
+    padding: 6px 10px;
+    width: auto;
+    text-align: center;
+  }
+  
+  /* Сообщения об ошибках */
+  .error-banner {
+    background-color: rgba(255, 85, 85, 0.1);
+    border: 1px solid rgba(255, 85, 85, 0.3);
+    padding: 10px 15px;
+    
+    color: #ff5555;
+    margin-bottom: 15px;
+    font-size: var(--font-size-sm);
+  }
+  
+  /* Список токенов */
   .tokens-list {
     display: grid;
     flex-wrap: column;
-    
     gap: 1vw;
     width: 100%;
   }
   
-  .loading, .error {
+  .loading, .error, .no-tokens, .loading-more, .end-of-list {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 200px;
@@ -28,5 +207,71 @@
   .error {
     color: #ff5555;
     font-weight: var(--font-weight-medium);
+  }
+  
+  .no-tokens {
+    height: 250px;
+  }
+  
+  .loading-more {
+    height: 80px;
+    font-size: var(--font-size-md);
+    margin-top: 10px;
+  }
+  
+  .end-of-list {
+    height: 60px;
+    font-size: var(--font-size-sm);
+    color: #777;
+    margin-top: 10px;
+    font-style: italic;
+  }
+  
+  .load-more-button, .clear-search-button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #333;
+    border: none;
+    color: white;
+   
+    font-size: var(--font-size-md);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .load-more-button:hover, .clear-search-button:hover {
+    background-color: #444;
+  }
+  
+  .clear-search-button {
+    background-color: #444;
+    margin-right: 10px;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 600px) {
+    .search-input {
+      padding: 8px 10px;
+      font-size: var(--font-size-sm);
+    }
+    
+    .search-button {
+      padding: 8px 10px;
+      font-size: var(--font-size-sm);
+    }
+    
+    .sort-button, .popularity-button {
+      padding: 6px 10px;
+      font-size: var(--font-size-xs);
+    }
+    
+    .clear-button {
+      right: 60px;
+      font-size: 14px;
+    }
+    
+    .sort-buttons {
+      gap: 5px;
+    }
   }
   

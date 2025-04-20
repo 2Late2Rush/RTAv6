@@ -65,8 +65,8 @@
 .token-card {
   display: flex;
   background-color: #222;
-  padding: 16px;
-  margin-bottom: 16px;
+  padding: 1.5vw;
+  margin-bottom: 0.5vw;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -77,10 +77,10 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0.8vw 0;
-  padding: 0.8vw 0;
+  margin-top: 1vw;
+  padding: 0;
   border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
+  
 }
 
 .price-item {
