@@ -1,0 +1,112 @@
+.token-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* .token-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  } */
+  
+  .token-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  
+  .token-image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .token-info {
+    margin-bottom: 16px;
+  }
+  
+  .token-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    color: #fff;
+  }
+  
+  .token-metrics {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin: 0;
+  }
+  
+  .token-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  
+  .action-button {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .action-button.favorite {
+    background-color: #3a3a3a;
+    color: #fff;
+  }
+  
+  /* .action-button.favorite:hover {
+    background-color: #4a4a4a;
+  } */
+  
+  .action-button.copy {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  /* Добавьте эти стили в TokenCard.css */
+.price-details {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+  }
+  
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .time-period {
+    color: #aaa;
+  }
+  
+  .positive-change {
+    color: #4caf50; /* Зеленый цвет для положительного изменения */
+  }
+  
+  .negative-change {
+    color: #f44336; /* Красный цвет для отрицательного изменения */
+  }
+  
+  .loading-details {
+    color: #888;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 8px;
+  }
+  /* .action-button.copy:hover {
+    background-color: #555;
+  } */

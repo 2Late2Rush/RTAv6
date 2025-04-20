@@ -43,7 +43,7 @@ nav {
     padding-top: 1rem;
     text-decoration: none;
     color: inherit;
-    font-size: clamp(0.5rem, 3vw, 1.5rem);
+    font-size: clamp(1rem, 3vw, 1.5rem);
 
   }
 

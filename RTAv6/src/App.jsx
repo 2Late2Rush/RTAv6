@@ -2,9 +2,10 @@ import { useEffect } from 'react'
 import './App.css'
 import { Routes, Route, Link } from 'react-router-dom'
 import Navigation from '../components/Navigation'
+import Tokens from '../components/Pages/Tokens'
 
 // Компоненты страниц
-const Home = () => <div>Домашняя страница</div>
+
 const About = () => <div>О приложении</div>
 const Settings = () => <div>Настройки</div>
 
@@ -30,7 +31,7 @@ function App() {
       <Navigation/>
       <main style={{ paddingTop: '60px' }}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Tokens />} />
           <Route path="/about" element={<About />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
