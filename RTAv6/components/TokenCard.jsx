@@ -61,45 +61,82 @@ const TokenCard = ({ token, onAddToFavorites, onOpenDetails }) => {
         }
       };
   
+      // Функция для форматирования большого числа в удобочитаемый формат
+const formatMarketCap = (marketCap) => {
+    if (!marketCap) return 'N/A';
+    
+    // Преобразуем в число, если это строка
+    const cap = typeof marketCap === 'string' ? parseFloat(marketCap) : marketCap;
+    
+    // Форматируем в зависимости от размера числа
+    if (cap >= 1e9) {
+      return `${(cap / 1e9).toFixed(2)}B`; // миллиарды
+    } else if (cap >= 1e6) {
+      return `${(cap / 1e6).toFixed(2)}M`; // миллионы
+    } else if (cap >= 1e3) {
+      return `${(cap / 1e3).toFixed(2)}K`; // тысячи
+    } else {
+      return cap.toFixed(2);
+    }
+  };
+
       return (
         <div className="token-card" onClick={handleCardClick}>
-          <div className="token-image">
-            <img src={token.image} alt={token.name} />
-          </div>
-          <div className="token-info">
-            <h3 className="token-name">{token.name}</h3>
-            <p className="token-metrics">{token.metrics}</p>
-            
-            {/* Отображаем дополнительные данные, если они загружены */}
-            {isLoadingDetails ? (
-            <p className="loading-details">Загрузка деталей...</p>
-          ) : priceDetails ? (
-            <div className="price-details">
-              <div className="price-row">
-                <span className="time-period">1m:</span> 
-                {formatPriceChange(priceDetails.changes['1_minute'])}
+          <div className="token-content">
+            <div className="token-header">
+              <div className="token-image">
+                <img src={token.image} alt={token.name} />
               </div>
-              <div className="price-row">
-                <span className="time-period">15m:</span> 
-                {formatPriceChange(priceDetails.changes['15_minutes'])}
+              <div className="token-title">
+                <h3 className="token-name">{token.name}</h3>
+                <p className="token-metrics">{token.metrics}</p>
               </div>
-              <div className="price-row">
-                <span className="time-period">1h:</span> 
-                {formatPriceChange(priceDetails.changes['1_hour'])}
-              </div>
-              <div className="price-row">
-                <span className="time-period">24h:</span> 
-                {formatPriceChange(priceDetails.changes['24_hours'])}
+              <div className="token-market-cap">
+                <span className="market-cap-label">Market Cap:</span>
+                <span className="market-cap-value">${formatMarketCap(token.market_cap)}</span>
               </div>
             </div>
-          ) : null}
+            
+            {/* Ценовые изменения в строку */}
+            {isLoadingDetails ? (
+              <p className="loading-details">Загрузка деталей...</p>
+            ) : priceDetails && priceDetails.changes ? (
+              <div className="price-details-row">
+                <div className="price-item">
+                  <span className="time-period">1m:</span> 
+                  {formatPriceChange(priceDetails.changes['1_minute'])}
+                </div>
+                <div className="price-item">
+                  <span className="time-period">15m:</span> 
+                  {formatPriceChange(priceDetails.changes['15_minutes'])}
+                </div>
+                <div className="price-item">
+                  <span className="time-period">1h:</span> 
+                  {formatPriceChange(priceDetails.changes['1_hour'])}
+                </div>
+                <div className="price-item">
+                  <span className="time-period">24h:</span> 
+                  {formatPriceChange(priceDetails.changes['24_hours'])}
+                </div>
+              </div>
+            ) : null}
           </div>
-          <div className="token-actions">
-            <button className="action-button favorite" onClick={handleAddToFavorites}>
-              Добавить в избранное
+          
+          {/* Кнопки действий в столбец справа */}
+          <div className="token-actions-column">
+            <button 
+              className="action-button-icon favorite" 
+              onClick={handleAddToFavorites} 
+              title="Добавить в избранное"
+            >
+              ★
             </button>
-            <button className="action-button copy" onClick={handleCopyAddress}>
-              Скопировать адрес
+            <button 
+              className="action-button-icon copy" 
+              onClick={handleCopyAddress} 
+              title="Скопировать адрес"
+            >
+              📋
             </button>
           </div>
         </div>

@@ -1,0 +1,71 @@
+:root {
+    /* Базовые размеры шрифтов */
+    --font-size-xs: 0.75rem;    /* 12px при базовом размере 16px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-md: 1rem;       /* 16px - стандартный */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+    
+    /* Относительные размеры (можно использовать при необходимости) */
+    --font-size-small: var(--font-size-sm);
+    --font-size-base: var(--font-size-md);
+    --font-size-large: var(--font-size-lg);
+    --font-size-heading: var(--font-size-xl);
+    --font-size-title: var(--font-size-2xl);
+    
+    /* Высота строки (line-height) */
+    --line-height-tight: 1.1;
+    --line-height-normal: 1.5;
+    --line-height-loose: 1.8;
+    
+    /* Толщина шрифта (font-weight) */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Семейства шрифтов */
+    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-family-heading: var(--font-family-base);
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  }
+  
+  /* Адаптивные размеры шрифтов для мобильных устройств */
+  @media (max-width: 768px) {
+    :root {
+      --font-size-2xl: 1.25rem;  /* Уменьшаем размеры на мобильных */
+      --font-size-3xl: 1.5rem;
+      --font-size-4xl: 1.75rem;
+    }
+  }
+  
+  /* Классы для применения размеров шрифтов */
+  .text-xs { font-size: var(--font-size-xs); }
+  .text-sm { font-size: var(--font-size-sm); }
+  .text-md { font-size: var(--font-size-md); }
+  .text-lg { font-size: var(--font-size-lg); }
+  .text-xl { font-size: var(--font-size-xl); }
+  .text-2xl { font-size: var(--font-size-2xl); }
+  .text-3xl { font-size: var(--font-size-3xl); }
+  .text-4xl { font-size: var(--font-size-4xl); }
+  
+  /* Классы для применения жирности шрифта */
+  .font-light { font-weight: var(--font-weight-light); }
+  .font-normal { font-weight: var(--font-weight-normal); }
+  .font-medium { font-weight: var(--font-weight-medium); }
+  .font-semibold { font-weight: var(--font-weight-semibold); }
+  .font-bold { font-weight: var(--font-weight-bold); }
+  
+  /* Классы для высоты строки */
+  .leading-tight { line-height: var(--line-height-tight); }
+  .leading-normal { line-height: var(--line-height-normal); }
+  .leading-loose { line-height: var(--line-height-loose); }
+  
+  /* Классы для семейств шрифтов */
+  .font-base { font-family: var(--font-family-base); }
+  .font-heading { font-family: var(--font-family-heading); }
+  .font-mono { font-family: var(--font-family-monospace); }

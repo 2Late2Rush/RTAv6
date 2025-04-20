@@ -1,8 +1,13 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0.5rem;
-  text-align: center;
+  width: 100vw;      /* 100% ширины viewport */
+  max-width: 1200px;  /* Максимальная ширина равна ширине viewport */
+  margin: 0 auto;         /* Убираем все внешние отступы */
+  padding: 0;        /* Убираем все внутренние отступы */
+  text-align: center;  /* Меняем выравнивание текста на левое или как вам нужно */
+  overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
+  box-sizing: border-box; /* Учитываем padding в общей ширине */
+  position: relative; /* Важно для правильного позиционирования дочерних элементов */
+
 }
 
 .logo {
@@ -11,12 +16,12 @@
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
+/* .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
+} */
 
 @keyframes logo-spin {
   from {
@@ -39,4 +44,12 @@
 
 .read-the-docs {
   color: #888;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

@@ -2,12 +2,18 @@
 .tokens-container {
     padding: 1vw;
     padding-top: 1vw; /* Добавляем отступ для навигационной панели */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
   
   .tokens-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    flex-wrap: column;
+    
     gap: 1vw;
+    width: 100%;
   }
   
   .loading, .error {

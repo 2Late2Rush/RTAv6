@@ -1,40 +1,34 @@
-.token-card {
+/* Добавляем или обновляем в TokenCard.css */
+
+.token-header {
     display: flex;
-    flex-direction: column;
-    background-color: #222;    
-    padding: 1vw;
-    margin-bottom: 1vw;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.5vw;
   }
   
-  /* .token-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  } */
-  
   .token-image {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1vw;
+    margin-right: 0.5vw;
+    flex-shrink: 0;
   }
   
   .token-image img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
   }
   
-  .token-info {
-    margin-bottom: 1vw;
+  .token-title {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
   
   .token-name {
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 0 0 8px 0;
+    margin: 0 0 4px 0;
     color: #fff;
   }
   
@@ -44,67 +38,157 @@
     margin: 0;
   }
   
-  .token-actions {
+  /* Стили для элемента капитализации */
+  .token-market-cap {
     display: flex;
-    justify-content: space-between;
-    gap: 8px;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto; /* Это выравнивает элемент по правому краю */
+    flex-shrink: 0;
   }
   
-  .action-button {
-    flex: 1;
-    padding: 0.5vw 1vw;
-    border: none;
+  .market-cap-label {
     font-size: 0.8rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .action-button.favorite {
-    background-color: #3a3a3a;
-    color: #fff;
-  }
-  
-  /* .action-button.favorite:hover {
-    background-color: #4a4a4a;
-  } */
-  
-  .action-button.copy {
-    background-color: #444;
-    color: #fff;
-  }
-  
-  /* Добавьте эти стили в TokenCard.css */
-.price-details {
-    margin-top: 0.5vw;
-    padding-top: 0.5vw;
-    border-top: 1px solid #333;
-  }
-  
-  .price-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5vw;
-    font-size: 0.9rem;
-  }
-  
-  .time-period {
-    color: #aaa;
-  }
-  
-  .positive-change {
-    color: #4caf50; /* Зеленый цвет для положительного изменения */
-  }
-  
-  .negative-change {
-    color: #f44336; /* Красный цвет для отрицательного изменения */
-  }
-  
-  .loading-details {
     color: #888;
-    font-size: 0.9rem;
-    font-style: italic;
-    margin-top: 8px;
+    margin-bottom: 4px;
   }
-  /* .action-button.copy:hover {
-    background-color: #555;
-  } */
+  
+  .market-cap-value {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+  }
+
+/* Добавьте эти стили в TokenCard.css */
+
+/* Карточка токена */
+.token-card {
+  display: flex;
+  background-color: #222;
+  padding: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Стили для строки с изменениями цены */
+.price-details-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0.8vw 0;
+  padding: 0.8vw 0;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.price-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  padding: 0 4px;
+}
+
+.time-period {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+/* Стили для положительных/отрицательных изменений */
+.positive-change {
+  color: #4caf50; /* Зеленый цвет для положительного изменения */
+  font-weight: bold;
+}
+
+.negative-change {
+  color: #f44336; /* Красный цвет для отрицательного изменения */
+  font-weight: bold;
+}
+
+.no-data {
+  color: #888;
+  font-style: italic;
+}
+
+.loading-details {
+  color: #888;
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Стили для кнопок */
+.token-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 0.8vw;
+}
+
+.action-button {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+    font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.action-button.favorite {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+.action-button.copy {
+  background-color: #444;
+  color: #fff;
+}
+
+
+/* Контент карточки занимает основную часть */
+.token-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Столбец с кнопками действий справа */
+.token-actions-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 16px;
+  width: 40px; /* Фиксированная ширина для кнопок */
+}
+
+/* Стиль для кнопок-иконок */
+.action-button-icon {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  font-size: 18px;
+  background-color: #333;
+  color: #fff;
+  padding: 0;
+}
+
+
+.action-button-icon.favorite {
+  background-color: #3a3a3a;
+}
+
+
+.action-button-icon.copy {
+  background-color: #444;
+}

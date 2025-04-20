@@ -25,7 +25,8 @@ const Tokens = () => {
                 symbol: token.symbol,
                 image: token.image_url,
                 metrics: `Price: $${parseFloat(token.usd_price).toFixed(4)} | TON: ${parseFloat(token.ton_price).toFixed(6)}`,
-                address: token.contract_address
+                address: token.contract_address,
+                market_cap: token.market_cap,
               }));
 
             setTokens(formattedTokens);
