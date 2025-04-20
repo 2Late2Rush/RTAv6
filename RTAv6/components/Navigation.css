@@ -1,0 +1,58 @@
+/* Navigation.css */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #292929;
+    z-index: 1000;
+    box-sizing: border-box;
+    
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    justify-content: space-between;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  nav li {
+    flex: 1;
+    text-align: center;
+    
+    
+  }
+  
+  .nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-bottom: 2px solid transparent; /* Начальная прозрачная граница */
+    transition: border-color 0.3s; /* Плавный переход для границы */
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    padding-top: 1rem;
+    text-decoration: none;
+    color: inherit;
+    font-size: clamp(0.5rem, 3vw, 1.5rem);
+
+  }
+
+  nav a.active-link {
+    color: red; /* Красный цвет текста для активной ссылки */
+  }
+  
+  .nav-button .active-link {
+    border-bottom: 3px solid red;
+    border-color: #ff3b30 !important;
+ 
+  }
