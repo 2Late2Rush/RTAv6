@@ -2,10 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './TokenCard.css';
+import { useToast } from './ToastContext';
+
 
 const TokenCard = ({ token, onAddToFavorites, onOpenDetails }) => {
     const [priceDetails, setPriceDetails] = useState(null);
     const [isLoadingDetails, setIsLoadingDetails] = useState(false);
+    const { showToast } = useToast();
+
 
     useEffect(() => {
         const fetchTokenDetails = async () => {
@@ -48,7 +52,14 @@ const TokenCard = ({ token, onAddToFavorites, onOpenDetails }) => {
       const handleCopyAddress = (e) => {
         e.stopPropagation();
         e.preventDefault(); // Блокируем стандартное поведение
-        navigator.clipboard.writeText(token.address);
+        navigator.clipboard.writeText(token.address)
+        .then(() => {
+          showToast('Адрес скопирован', 'success', 500);
+        })
+        .catch(err => {
+          console.error('Не удалось скопировать адрес:', err);
+          showToast('Не удалось скопировать адрес', 'error', 500);
+        });
         // Заменяем alert на console.log или можно добавить визуальную индикацию через состояние
         console.log(`Адрес скопирован: ${token.address}`);
       };

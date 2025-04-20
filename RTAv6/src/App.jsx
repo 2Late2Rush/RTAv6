@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import './App.css'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Navigation from '../components/Navigation'
 import Tokens from '../components/Pages/Tokens'
+import { ToastProvider } from '../components/ToastContext'
+
 
 // Компоненты страниц
 
@@ -27,16 +29,18 @@ function App() {
   }, [])
 
   return (
-    <div className="container">
-      <Navigation/>
-      <main style={{ paddingTop: '60px' }}>
-        <Routes>
-          <Route path="/" element={<Tokens />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
-      </main>
-    </div>
+    <ToastProvider>
+      <div className="container">
+        <Navigation/>
+        <main style={{ paddingTop: '60px' }}>
+          <Routes>
+            <Route path="/" element={<Tokens />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </main>
+      </div>
+    </ToastProvider>
   )
 }
        
