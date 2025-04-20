@@ -1,13 +1,13 @@
 /* components/Pages/Tokens.css */
 .tokens-container {
-    padding: 16px;
-    padding-top: 70px; /* Добавляем отступ для навигационной панели */
+    padding: 1vw;
+    padding-top: 1vw; /* Добавляем отступ для навигационной панели */
   }
   
   .tokens-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
+    gap: 1vw;
   }
   
   .loading, .error {
@@ -22,35 +22,4 @@
   .error {
     color: #ff5555;
   }
-  /* Добавьте эти стили в TokenCard.css */
-.price-details {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #333;
-  }
   
-  .price-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    font-size: 0.9rem;
-  }
-  
-  .time-period {
-    color: #aaa;
-  }
-  
-  .positive-change {
-    color: #4caf50; /* Зеленый цвет для положительного изменения */
-  }
-  
-  .negative-change {
-    color: #f44336; /* Красный цвет для отрицательного изменения */
-  }
-  
-  .loading-details {
-    color: #888;
-    font-size: 0.9rem;
-    font-style: italic;
-    margin-top: 8px;
-  }

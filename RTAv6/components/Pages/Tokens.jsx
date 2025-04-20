@@ -67,7 +67,6 @@ const Tokens = () => {
     
       return (
         <div className="tokens-container">
-          <h2>Tokens</h2>
           <div className="tokens-list">
             {tokens.map(token => (
               <TokenCard 
