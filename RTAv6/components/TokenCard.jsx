@@ -42,6 +42,15 @@ const TokenCard = ({ token, onAddToFavorites, onOpenDetails }) => {
       
       const handleAddToFavorites = (e) => {
         e.stopPropagation();
+        e.preventDefault(); // Блокируем стандартное поведение
+        navigator.clipboard.writeText(token.address)
+        .then(() => {
+          showToast('Токен добавлен в избранное', 'success', 500);
+        })
+        .catch(err => {
+          console.error('Не удалось добавить токен в избранное:', err);
+          showToast('Не удалось добавить токен в избранное', 'error', 500);
+        });
         if (onAddToFavorites) {
           onAddToFavorites(token);
         } else {
@@ -99,7 +108,7 @@ const formatMarketCap = (marketCap) => {
                 <img src={token.image} alt={token.name} />
               </div>
               <div className="token-title">
-                <h3 className="token-name">{token.name}</h3>
+                <h2 className="token-symbol">{token.symbol}</h2>
                 <p className="token-metrics">{token.metrics}</p>
               </div>
               <div className="token-market-cap">
