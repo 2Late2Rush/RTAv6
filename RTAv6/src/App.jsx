@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navigation from '../components/Navigation'
 import Tokens from '../components/Pages/Tokens'
 import { ToastProvider } from '../components/ToastContext'
+import TokenDetails from '../components/Pages/TokenDetails'
 
 
 // Компоненты страниц
@@ -37,6 +38,7 @@ function App() {
             <Route path="/" element={<Tokens />} />
             <Route path="/about" element={<About />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/token/:tokenId" element={<TokenDetails />} />ы
           </Routes>
         </main>
       </div>

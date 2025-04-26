@@ -1,0 +1,115 @@
+/* components/Pages/TokenDetails.css */
+.details-page-token-details-container {
+  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #333;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.details-page-token-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.details-page-back-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ccc;
+  font-size: var(--font-size-sm);
+  transition: color 0.2s;
+}
+
+.details-page-back-button:hover {
+  color: white;
+}
+
+.details-page-token-name {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.details-page-favorite-button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.details-page-favorite-button:hover {
+  transform: scale(1.1);
+}
+
+.details-page-token-image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+}
+
+.details-page-token-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.details-page-token-info {
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.details-page-token-description {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.details-page-token-price, .details-page-token-market-cap {
+  font-size: var(--font-size-md);
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-page-token-price::before {
+  content: "Price:";
+  color: #999;
+}
+
+.details-page-token-market-cap::before {
+  content: "Market Cap:";
+  color: #999;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+  .details-page-token-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .details-page-back-button {
+    margin-bottom: 0.5rem;
+  }
+  
+  .details-page-favorite-button {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+}

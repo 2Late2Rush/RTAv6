@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import axios from 'axios';
 import TokenCard from '../TokenCard';
 import './Tokens.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const Tokens = () => {
     const [tokens, setTokens] = useState([]);
@@ -17,6 +19,7 @@ const Tokens = () => {
     const observer = useRef();
     const limitPerPage = 20;
     const apiBaseUrl = 'https://rush-api-service-tradingappserverv4.up.railway.app/database';
+    const navigate = useNavigate();
     
     // Ref для последнего элемента
     const lastTokenElementRef = useCallback(node => {
@@ -198,7 +201,7 @@ const Tokens = () => {
     };
     
     const handleOpenDetails = (token) => {
-      console.log(`Opening details for ${token.name}`);
+      navigate(`/token/${token.id}`);
     };
     
     // Обработчик изменения строки поиска
